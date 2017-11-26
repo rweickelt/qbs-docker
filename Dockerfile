@@ -52,4 +52,10 @@ LABEL Description="Ubuntu development environment with Qt 5.9 and Qbs."
 
 COPY --from=qbs-builder /opt/qbs /opt/qbs
 ENV PATH="/opt/qbs/bin:${PATH}"
+
+RUN qbs setup-toolchains --detect \
+    && qbs setup-qt ${QT_BASE_DIR}/bin/qmake qt5 \
+    && qbs config defaultProfile qt5 \
+    && qbs config profiles.qt5.qbs.architecture x86_64
+
 ENTRYPOINT ["/opt/qbs/bin/qbs"]

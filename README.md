@@ -29,12 +29,6 @@ docker pull rweickelt/qbs:latest
 Changelog
 ---------
 
-1.9.1-2 (2017-11-26:
-
-- Updated Qt to 5.9.3
-- Removed examples
-
-
-1.9.1-1 (2017-11-26):
+1.9.1-1 (2017-11-27):
 
 - Initial release
