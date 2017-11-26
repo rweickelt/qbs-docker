@@ -7,18 +7,34 @@ environments.
 
 The image is available on docker hub: https://hub.docker.com/r/rweickelt/qbs
 
-Included packages:
 
-- git
-- Qt 
-- Qbs
-- Gcc
-- make
+Included packages
+-----------------
 
-Version 1.9.1
-=============
-
-- Qt 5.9.2
+- Git 2.7.4
+- Qt 5.9.3
 - Qbs 1.9.1
 - Gcc 5.4.0
-- git 2.7.4 
+- Make 
+
+How to use
+----------
+
+Pull from docker hub: 
+
+```
+docker pull rweickelt/qbs:latest
+```
+
+Changelog
+---------
+
+1.9.1-2 (2017-11-26:
+
+- Updated Qt to 5.9.3
+- Removed examples
+
+
+1.9.1-1 (2017-11-26):
+
+- Initial release

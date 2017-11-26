@@ -11,14 +11,15 @@ RUN apt-get update -qq \
         make \
         software-properties-common
 
-RUN add-apt-repository --yes ppa:beineri/opt-qt592-xenial \
+RUN add-apt-repository --yes ppa:beineri/opt-qt593-xenial \
     && apt-get update -qq \
     && apt-get -y install --no-install-recommends \
         qt59base \
         qt59declarative \
         qt59script \
         qt59serialport \
-        qt59tools
+        qt59tools \
+    && rm -rf /opt/qt59/examples
 
 ENV QT_BASE_DIR=/opt/qt59
 ENV PATH="${QT_BASE_DIR}/bin:${PATH}" \
@@ -51,3 +52,4 @@ LABEL Description="Ubuntu development environment with Qt 5.9 and Qbs."
 
 COPY --from=qbs-builder /opt/qbs /opt/qbs
 ENV PATH="/opt/qbs/bin:${PATH}"
+ENTRYPOINT ["/opt/qbs/bin/qbs"]
