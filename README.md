@@ -1,4 +1,4 @@
-Basic Qbs Build Environment 
+Basic Qbs Build Environment
 ===========================
 
 This docker image provides a Linux environment based upon Ubuntu 16.04 for
@@ -15,16 +15,29 @@ Included packages
 - Qt 5.9.3
 - Qbs 1.9.1
 - Gcc 5.4.0
-- Make 
+- Make
 
 How to use
 ----------
 
-Pull from docker hub: 
+Pull the latest version from docker hub:
 
-```
+```sh
 docker pull rweickelt/qbs:latest
 ```
+
+Execute qbs on a file in the current directory:
+
+```sh
+docker run -v ${PWD}:/myproject rweickelt/qbs \
+    install -f /myproject.qbs --install-root /myproject/results \
+    profile:qt5
+```
+
+This mounts the current directory as ``/myproject`` inside the docker
+container and executes qbs on it. The build result is written to
+``/myproject/results`` and hence, into a subfolder ``results`` in the current directory.
+
 
 Changelog
 ---------
