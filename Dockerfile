@@ -11,7 +11,7 @@ RUN apt-get update -qq \
         make \
         software-properties-common
 
-RUN add-apt-repository --yes ppa:beineri/opt-qt593-xenial \
+RUN add-apt-repository --yes ppa:beineri/opt-qt594-xenial \
     && apt-get update -qq \
     && apt-get -y install --no-install-recommends \
         qt59base \
@@ -34,7 +34,7 @@ RUN apt-get -y install \
         libgl1-mesa-dev
 
 
-RUN git clone --depth 1 -b v1.9.1 https://github.com/qbs/qbs.git qbs-build-dir \
+RUN git clone --depth 1 -b v1.10.1 https://github.com/qbs/qbs.git qbs-build-dir \
     && cd qbs-build-dir \
     && qmake -r qbs.pro \
         CONFIG+=qbs_no_dev_install  \

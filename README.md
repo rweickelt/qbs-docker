@@ -12,8 +12,8 @@ Included packages
 -----------------
 
 - Git 2.7.4
-- Qt 5.9.3
-- Qbs 1.9.1
+- Qt 5.9.4
+- Qbs 1.10.1
 - Gcc 5.4.0
 - Make
 
@@ -41,6 +41,11 @@ container and executes qbs on it. The build result is written to
 
 Changelog
 ---------
+
+1.10.1-1 (2018-03-20):
+
+- Update Qbs version 1.10.1
+- Update Qt version to 5.9.4
 
 1.9.1-1 (2017-11-27):
 
